@@ -5,11 +5,35 @@
 
     .section {
         ul {
+            @include list-reset;
+
             border-left: 1em solid black;
             padding-left: 1em;
 
             li {
-                margin: 0 0 0.5em 1.5em;
+                position: relative;
+                margin: 0 0 0.5em 2em;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: -2.2em;
+                    top: 0.2em;
+
+                    background-color: #eee;
+                    width: 1.4em;
+                    height: 1.4em;
+
+                    text-align: center;
+                    color: $c-brand-main;
+                }
+
+                &.selected {
+                    &:before {
+                        content: "\002714";
+                    }
+                }
             }
         }
 
@@ -20,9 +44,5 @@
         &.brexit ul {
             border-color: $c-cat-brexit;
         }
-    }
-
-    .selected {
-        background-color: #eee;
     }
 }
