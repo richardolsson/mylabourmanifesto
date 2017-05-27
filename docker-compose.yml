@@ -1,0 +1,22 @@
+version: "2"
+
+volumes:
+    dbdata:
+
+services:
+    db:
+        build: ./env/db
+        hostname: db
+        volumes:
+            - dbdata:/var/lib/postgresql
+        
+    django:
+        build: ./env/django
+        hostname: backend
+        ports:
+            - 80:8000
+        volumes:
+            - ./backend:/var/app
+            - ./static:/var/static
+        links:
+            - db
