@@ -19,6 +19,6 @@ $(document).ready(function() {
 
     model.onChange = function(selection) {
         preview.render(selection);
-        preview.toggle(true);
+        preview.toggle(selection.length > 0);
     };
 });
