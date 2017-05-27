@@ -1,9 +1,31 @@
+{% load staticfiles %}
 <!doctype html>
 <html>
 <head>
     <title>My Labour Manifesto</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
 </head>
 <body>
-    Hello, world!
+    <div id="manifesto">
+        <div class="section economy">
+            <h2>Creating an economy that works for all</h2>
+            <ul>
+                <li>We will measure our economic success not by the number of billionaires, but by the ability of our people to live richer lives.</li>
+                <li>A Labour government will guarantee no rises in income tax for those earning below £80,000 a year, and no increases in personal National Insurance Contributions or the rate of VAT</li>
+                <li>Under Labour’s plans, 95 per cent of taxpayers will be guaranteed no increase in their income tax contributions</li>
+                <li>Our Fiscal Credibility Rule is based on the simple principle that government should not be borrowing for day-to- day spending, but that future growth depends on investment</li>
+                <li>In London, to ensure our capital continues to prosper, we will build Crossrail 2</li>
+            </ul>
+        </div>
+        <div class="section brexit">
+            <h2>Negotiating Brexit</h2>
+            <ul>
+                <li>Labour accepts the referendum result and a Labour government will put the national interest first.</li>
+                <li>We will end Theresa May’s reckless approach to Brexit, and seek to unite the country around a Brexit deal that works for every community in Britain.</li>
+                <li>We will introduce legislation to ensure there are no gaps in national security and criminal justice arrangements as a result of Brexit.</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>

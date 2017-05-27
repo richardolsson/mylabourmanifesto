@@ -1,0 +1,37 @@
+$medium-width: 719px;
+$large-width: 1023px;
+
+$c-brand-main: #e4003b;
+$c-brand-comp0: #7b124a;
+$c-brand-comp1: #0383a9;
+$c-brand-comp2: #e50064;
+$c-brand-comp3: #e4003b;
+$c-brand-comp4: #9fd4d1;
+$c-brand-comp5: #00384d;
+$c-brand-comp6: #40bbcb;
+$c-brand-comp7: #a2c516;
+$c-brand-comp8: #004d40;
+$c-brand-comp9: #eebdd9;
+$c-brand-comp10: #f8ac33;
+$c-brand-comp11: #a14392;
+
+$c-ui-col0: $c-brand-main;
+$c-ui-col1: $c-brand-comp4;
+$c-ui-col2: $c-brand-comp7;
+
+$c-ui-col0-light: lighten($c-ui-col0, 5);
+$c-ui-col1-light: lighten($c-ui-col1, 5);
+$c-ui-col2-light: lighten($c-ui-col2, 5);
+
+$c-cat-economy: $c-brand-comp0;
+$c-cat-brexit: $c-brand-comp1;
+$c-cat-education: $c-brand-comp2;
+$c-cat-work: $c-brand-comp3;
+$c-cat-security: $c-brand-comp4;
+$c-cat-homes: $c-brand-comp5;
+$c-cat-healthcare: $c-brand-comp6;
+$c-cat-community: $c-brand-comp7;
+$c-cat-lives: $c-brand-comp8;
+$c-cat-democracy: $c-brand-comp9;
+$c-cat-society: $c-brand-comp10;
+$c-cat-britain: $c-brand-comp11;

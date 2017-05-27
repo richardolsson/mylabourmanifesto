@@ -1,0 +1,49 @@
+body {
+    font-size: 16px;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-size: inherit;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+a {
+    color: $c-ui-col0;
+
+    &:hover {
+        color: $c-ui-col0-light;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@include medium-screen {
+    body {
+        font-size: 14px;
+    }
+}
+
+@include large-screen {
+    body {
+        font-size: 15px;
+    }
+}

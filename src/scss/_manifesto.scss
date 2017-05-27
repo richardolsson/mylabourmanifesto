@@ -1,0 +1,24 @@
+#manifesto {
+    width: 94%;
+    max-width: 80em;
+    margin: 0 auto;
+
+    .section {
+        ul {
+            border-left: 1em solid black;
+            padding-left: 1em;
+
+            li {
+                margin: 0 0 0.5em 1.5em;
+            }
+        }
+
+        &.economy ul {
+            border-color: $c-cat-economy;
+        }
+
+        &.brexit ul {
+            border-color: $c-cat-brexit;
+        }
+    }
+}

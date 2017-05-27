@@ -1,0 +1,56 @@
+@mixin clear-fix {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin list-reset {
+    padding: 0;
+    margin: 0;
+
+    & > li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@mixin button {
+    display: block;
+    border-width: 0;
+    background: $c-ui-col0 linear-gradient($c-ui-col0, lighten($c-ui-col0, 10));
+    border-radius: 0.5em;
+    color: white;
+    padding: 1em;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+        background: $c-ui-col0;
+    }
+}
+
+@mixin icon($fa-character) {
+    @include fa-icon;
+    text-align: center;
+    height: 1.6em;
+    width: 1.6em;
+    line-height: 1.6;
+    margin-right: .2em;
+    content: $fa-character;
+}
+
+@mixin medium-screen {
+  @media (min-width: #{$medium-width}) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media only screen and (min-width: #{$large-width}) {
+    @content;
+  }
+}
