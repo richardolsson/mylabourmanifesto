@@ -25,6 +25,13 @@ function initSelection() {
         // TODO: Use ID from back-end
         li.data('id', id);
         li.click(function() {
+            if (!li.hasClass('selected')) {
+                var alreadySelected = $('.section li.selected');
+                if (alreadySelected.length == 3) {
+                    alreadySelected.first().removeClass('selected');
+                }
+            }
+
             li.toggleClass('selected');
             emitSelection();
         });
