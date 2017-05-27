@@ -14,8 +14,23 @@ function initPreview() {
     canvas.addClass('content');
     preview.append(canvas);
 
-    var ul = $(document.createElement('ul'));
-    canvas.append(ul);
+    var logo = $(document.createElement('img'));
+    logo.attr('src', '/static/logo.svg'); // TODO: Don't hardcode static path
+    logo.addClass('logo');
+    canvas.append(logo);
+
+    var credits = $(document.createElement('span'));
+    credits.addClass('credits');
+    credits.text('Created with mylabourmanifesto.com');
+    canvas.append(credits);
+
+    var pledges = $(document.createElement('div'));
+    pledges.addClass('pledges');
+    canvas.append(pledges);
+
+    var header = $(document.createElement('h1'));
+    header.text("I'm voting Labour because:");
+    pledges.append(header);
 
     var tools = $(document.createElement('div'));
     tools.addClass('tools');
@@ -23,12 +38,24 @@ function initPreview() {
 
     var ns = {
         render: function(selection) {
-            ul.find('li').remove();
+            pledges.find('p').remove();
+            pledges.removeClass('small medium large');
+
+            if (selection.length) {
+                pledges.addClass(['large', 'medium', 'small'][selection.length - 1]);
+            }
 
             $.each(selection, function(idx, item) {
-                var li = $(document.createElement('li'));
-                li.text(item.text);
-                ul.append(li);
+                var p = $(document.createElement('p'));
+                var text = item.text;
+
+                // Number paragraphs if there are more than one
+                if (selection.length > 1) {
+                    text = (idx+1) + '. ' + text;
+                }
+
+                p.text(text);
+                pledges.append(p);
             });
 
             tools.find('button').remove();

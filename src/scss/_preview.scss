@@ -18,8 +18,74 @@
     }
 
     .content {
+        position: relative;
         height: 100vw;
+        color: white;
         background-color: $c-brand-main;
+
+        &:before {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0; 
+            left: 0; 
+            right: 0;
+            bottom: 0;
+            background: $c-brand-main url('bg.png') center center;
+            background-size: cover;
+            opacity: 0.2;
+        }
+
+        .pledges {
+            position: absolute;
+            top: 47%;
+            margin: 0 2em;
+            transform: translate(0, -50%);
+
+            text-align: center;
+
+            h1 {
+                font-size: 0.8em;
+                font-weight: bold;
+            }
+
+            p {
+                margin: 0 0 0.8em;
+            }
+
+            &.large {
+                p {
+                    font-size: 1.4em;
+                }
+            }
+
+            &.medium {
+                p {
+                    font-size: 1.2em;
+                }
+            }
+
+            &.small {
+                p {
+                    font-size: 1.0em;
+                }
+            }
+        }
+
+        .logo {
+            position: absolute;
+            bottom: 0.5em;
+            left: 0.5em;
+        }
+
+        .credits {
+            position: absolute;
+            bottom: 0.5em;
+            right: 0.5em;
+            opacity: 0.5;
+
+            font-size: 0.6em;
+        }
     }
 
     .tools {
