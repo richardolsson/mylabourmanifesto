@@ -20,10 +20,10 @@
 @mixin button {
     display: block;
     border-width: 0;
-    background: $c-ui-col0 linear-gradient($c-ui-col0, lighten($c-ui-col0, 10));
-    border-radius: 0.5em;
-    color: white;
-    padding: 1em;
+    border: 2px solid $c-brand-main;
+    background: transparent;
+    color: $c-brand-main;
+    padding: 0.5em 1em;
     cursor: pointer;
     text-align: center;
     text-decoration: none;

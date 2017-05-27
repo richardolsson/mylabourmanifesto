@@ -1,7 +1,7 @@
 var $ = require('jquery');
 
 
-function initSelection(onChange) {
+function initSelection() {
     var nextId = 1;
 
     function emitSelection() {
@@ -13,7 +13,9 @@ function initSelection(onChange) {
             };
         }).get();
 
-        onChange(selection);
+        if (ns.onChange) {
+            ns.onChange(selection);
+        }
     }
 
     $('.section li').each(function() {
@@ -27,6 +29,18 @@ function initSelection(onChange) {
             emitSelection();
         });
     });
+
+    var ns = {
+        clear: function() {
+            $('.section li').each(function() {
+                $(this).removeClass('selected');
+            });
+
+            emitSelection();
+        },
+    };
+
+    return ns;
 }
 
 module.exports = initSelection

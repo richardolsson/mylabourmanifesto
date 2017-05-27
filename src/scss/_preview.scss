@@ -1,9 +1,35 @@
 #preview {
+    background-color: white;
     position: fixed;
-    bottom: 0;
+    bottom: -100%;
     left: 0;
     right: 0;
-    height: 5em;
-    background-color: $c-brand-main;
+    box-shadow: 0 0 1em rgba(0,0,0,0.2);
 
+    transition: bottom 0.2s;
+
+    &.visible {
+        bottom: 0;
+    }
+
+    h1 {
+        font-size: 1em;
+        margin: 0.5em;
+    }
+
+    .content {
+        height: 100vw;
+        background-color: $c-brand-main;
+    }
+
+    .tools {
+        text-align: center;
+        padding: 0.5em 0;
+
+        button {
+            @include button;
+            display: inline-block;
+            margin: 0 0.5em;
+        }
+    }
 }
