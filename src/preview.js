@@ -80,16 +80,14 @@ function initPreview() {
                 });
                 tools.append(clearButton);
 
-                if (selection.length < 3) {
-                    var moreButton = $(document.createElement('button'));
-                    moreButton.text('Add more');
-                    moreButton.click(function() {
-                        if (ns.onClose) {
-                            ns.onClose();
-                        }
-                    });
-                    tools.append(moreButton);
-                }
+                var changeButton = $(document.createElement('button'));
+                changeButton.text((selection.length < 3)? 'Add more' : 'Change');
+                changeButton.click(function() {
+                    if (ns.onClose) {
+                        ns.onClose();
+                    }
+                });
+                tools.append(changeButton);
             }
         },
 
