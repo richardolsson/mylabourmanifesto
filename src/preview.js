@@ -2,9 +2,13 @@ var $ = require('jquery');
 
 
 function initPreview() {
+    var shader = $(document.createElement('div'));
+    shader.attr('id', 'preview-shader');
+    $('#manifesto').after(shader);
+
     var preview = $(document.createElement('div'));
     preview.attr('id', 'preview');
-    $('#manifesto').after(preview);
+    shader.after(preview);
 
     var h = $(document.createElement('h1'));
     h.text('Now share your manifesto');
@@ -90,6 +94,7 @@ function initPreview() {
         },
 
         toggle: function(visible) {
+            shader.toggleClass('visible', visible);
             preview.toggleClass('visible', visible);
         },
     };
